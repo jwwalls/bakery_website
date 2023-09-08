@@ -1,42 +1,374 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  /* border: 1px solid white; */
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(214, 235, 212);
+  
+}
+
+.Navbar {
+
+  width: 80%;
+  height: 2%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: sticky;
+  z-index: 9999;
+}
+.logoContainer{
+  width: 15%;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+ 
+
+  font-family: 'Poppins', sans-serif;
+  color: #c19f5f;
+  line-height: 3rem;
+  letter-spacing: 3px;
+  font-size: 30px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.apostrophe{
+  color: #263c48;
+
+  font-family: 'Poppins', sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.logoSubtext{
+  color: #263c48;
+  font-size: 14px;
+
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.Links{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.username{
+  color: #c19f5f;
+  position: relative;
+  font-family: 'Mulish',sans-serif;
+  letter-spacing: 1px;
+  padding: 0px 30px;
+  font-weight: bolder;
+  font-size: 14px;
+}
+.Navbar a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #263c48;
+  font-size: 14px;
+  position: relative;
+  font-family: 'Mulish',sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding: 0px 30px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background-color:#263c48;
+    
+    transition: all 0.3s ease-in-out;
   }
-  to {
-    transform: rotate(360deg);
+
+  &.active:after {
+    width: 70%;
+ 
+  }
+
+  &:hover:after {
+    width: 70%;
+  }
+  
+  /* &.active {
+    color: #c19f5f; /* Change the color on hover */
+  } */
+}
+.Navbar button {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.react-icons {
+  vertical-align: middle;
+  color: #263c48;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.react-icons:hover {
+  color: #c19f5f; /* Change the color to white on hover */
+}
+.NavIcons{
+  width: 15%;
+
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5%;
+}
+.NavIcons li{
+  width: 30px;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+
+.activitiesContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.activitiesBanner {
+  font-size: 60px;
+  margin-top: 2%;
+}
+.searchContainer {
+  height: 40px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#searchInput {
+  width: 20%;
+  margin: 0px;
+}
+.searchContainer button {
+  background-color: #fc4c02;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
+button {
+  cursor: pointer;
+  border: 2px solid #fc4c02;
+  background-color: #e5e5e5;
+  border-radius: 0.9em;
+  padding: 0.8em 1.2em 0.8em 1em;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+}
+
+button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #fc4c02;
+  color: white;
+}
+
+.routineButton{
+  left: 0;
+  width: 50%
+}
+
+.activities {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  font-family: "Pathway Gothic One", Arial, sans-serif !important;
+  padding: 0% 5% 0% 5%;
+}
+.activity button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 10px;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity:hover button {
+  display: flex;
+}
+
+.activity img {
+  width: 100%;
+}
+
+.activity {
+  width: 20%;
+  height: 300px;
+  position: relative;
+  background: mediumturquoise;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.4);
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.activity::before,
+.activity::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #e5e5e5;
+  transition: all 0.5s;
+  button{
+    display: ;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.activity::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 5px 0 100%;
 }
 
-.card {
-  padding: 2em;
+.activity::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px;
 }
 
+.activity:hover::before,
+.activity:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.activity:hover:after {
+  content: var(--description);
+
+  font-size: 16px;
+  padding: 5px;
+}
+.activityTitle {
+  background-color: #e5e5e579;
+  padding: 5px;
+  width: 100%;
+}
+
+.pagination {
+  margin: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.pagination button {
+  font-size: 16px;
+  padding: 10px;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: pointer;
+}
+.pagination button.active {
+  background-color: #fc4c02;
+  color: white;
+}
+.dots{
+  align-self: flex-end;
+  padding-bottom: 2px;
+}
+.numberButton:hover {
+  color: #fc4c02;
+}
+.nextButton:hover {
+  color: #fc4c02;
+}
 .read-the-docs {
   color: #888;
 }
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color:  #e5e5e5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+}
+.toast{
+  position: absolute;
+  
+}
+#scroll-to-top-btn {
+ 
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 50px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #fc4c02; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 15px; /* Rounded corners */
+  font-size: 25px; /* Increase font size */
+  height: 40px; 
+  display: ${isScrolledDown ? "block" : "none"};
+ 
+ 
+}
+#scroll-to-top-btn:hover {
+  background-color: #555; 
+}
+
