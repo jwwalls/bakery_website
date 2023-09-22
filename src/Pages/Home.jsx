@@ -6,7 +6,8 @@ const Home = () => {
   const images = [
     "img/cake1.jpg",
     "img/cake2.jpg",
-    "img/cake3.jpg"
+    "img/cake3.jpg",
+    "img/cake5.jpg"
   ];
 
   const nextImage = () => {

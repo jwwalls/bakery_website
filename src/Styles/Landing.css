@@ -34,13 +34,13 @@
 }
 
 .carouselImage.hidden {
-  opacity: 0;
   animation: fadeOut 200ms ease-out forwards;
 }
 
 .carouselButtons button {
   background-color: rgba(193, 159, 95, 0.4); /* 50% opacity */
-  color: #263c48;
+  color: rgba(38, 60, 72, 0.5); /* This sets the color to 50% opacity */
+
  
 	display: flex;
 	
@@ -56,6 +56,7 @@
 
 .carouselButtons button:hover {
   background-color: rgba(193, 159, 95, 0.7); /* 50% opacity */
+  color: rgba(38, 60, 72);
   outline: 1px solid #263c48;
 }
 .prev {

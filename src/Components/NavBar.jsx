@@ -67,7 +67,7 @@ const NavBar = ({ user, setToken, setUser }) => {
           className={activeLink === "activities" ? "active" : ""}
           onClick={() => handleLinkClick("activities")}
         >
-          Treats
+          Gallery
         </Link>
         <Link
           to="/myRoutines"

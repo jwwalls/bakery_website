@@ -1,0 +1,76 @@
+.image-row {
+    height: 200px;
+    width: 500px;
+    margin: 100px auto;
+    position: relative;
+  }
+  
+  .image {
+    height: 100px;
+    position: absolute;
+    left: 0;
+    offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+    box-shadow: 1px 1px 3px #0008;
+    transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
+    z-index: 0;
+  }
+  
+  .image:hover {
+    transform: scale(3);
+    /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
+    offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+    box-shadow: 3px 4px 10px #0006;
+    z-index: 999;
+  }
+  .image-gallery-container {
+    background-image: url('/public/img/Confetti.png'); /* Specify the path to your background image */
+    background-repeat: repeat; /* Repeat the background image */
+    background-size: auto; /* Automatically adjust the background size */
+     /* Ensure the container covers the entire viewport height */
+    padding: 2px; /* Add some padding for spacing */
+  }
+  
+  
+  
+  /* 3 images */
+  .image:nth-last-child(3):first-child {
+    offset-distance: 17%;
+  }
+  .image:nth-last-child(2):nth-child(2) {
+    offset-distance: 49%;
+  }
+  .image:last-child:nth-child(3) {
+    offset-distance: 81%;
+  }
+  
+  /* 4 images */
+  .image:nth-last-child(4):first-child {
+    offset-distance: 10%;
+  }
+  .image:nth-last-child(3):nth-child(2) {
+    offset-distance: 35%;
+  }
+  .image:nth-last-child(2):nth-child(3) {
+    offset-distance: 65%;
+  }
+  .image:last-child:nth-child(4) {
+    offset-distance: 90%;
+  }
+  
+  /* 5 images */
+  .image:nth-last-child(5):first-child {
+    offset-distance: 0%;
+  }
+  .image:nth-last-child(4):nth-child(2) {
+    offset-distance: 25%;
+  }
+  .image:nth-last-child(3):nth-child(3) {
+    offset-distance: 51%;
+  }
+  .image:nth-last-child(2):nth-child(4) {
+    offset-distance: 75%;
+  }
+  .image:last-child:nth-child(5) {
+    offset-distance: 100%;
+  }
+  

@@ -6,6 +6,7 @@ import LogInRegister from "./LogInRegister";
 import MyRoutines from "../Pages/MyRoutines";
 import PostActivity from "./PostActivity";
 import Routines from "../Pages/Routines";
+import ImageGallery from "../Pages/Gallery";
 import "../App.css";
 
 
@@ -16,7 +17,7 @@ const RRoutes = ({ token, setToken, user, setUser }) => {
         <Route path="/" element={<Home token={token} />}></Route>
         <Route
           path="/activities"
-          element={<Activities token={token} />}
+          element={<ImageGallery token={token} />}
         ></Route>
         <Route
           path="/postActivity"
